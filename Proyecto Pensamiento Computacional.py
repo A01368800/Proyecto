@@ -1,5 +1,6 @@
 
 
+
 # Cartelera
 
 print("Bienvenido a TicketSeller")
@@ -8,6 +9,7 @@ print("Napoli vs Juventus, 1000 c/u, indica la opcion 2")
 print("Bayern Munich vs Leipzig, 900 c/u, indica la opcion 3")
 print("Toluca vs America, 700 c/u, indica la opcion 4")
 
+lista = []
 
 opcion = int(input("¿Que partido quiere ver?, indique la opcion:   "))
 n_boletos  = int(input("¿Cuantos boletos quieres?:    "))
@@ -27,7 +29,11 @@ def partidos(opcion):
         elif opcion == 4:
             return n_boletos * 700
 
-print("El monto a pagar es de:", partidos(opcion))
+
+
+lista.append(partidos(opcion))
+
+print("El monto a pagar es de:", lista)
 
 opcion2 = input("¿Desea entradas para otro partido?:     ")
 
@@ -54,28 +60,22 @@ while opcion2 == "si":
         
     total = partidos(opcion) + partidos2(opcion2)
 
-    print(total)
+    lista.append(partidos2(opcion2))
+
+    print(lista)
     
     opcion2 = input("¿Desea entradas para otro partido?:     ")
     
 else:
     print("Ok, continuamos con su compra")
 
+def suma_total(lista):
+        acum = 0
+        for i in lista:
+                acum = acum + i
+        return acum
 
-print("Somos accesibles a ustedes en su forma de pago")
-n = input("su forma de pago sera con tarjeta?   ")
-
-lista = ["banamex","bancomer","hsbc","scotiabank"]
-
-
-if n == "si":
-        
-        print("solo aceptamos estas tarjetas: ",lista)
-else:
-        print("ok continuamos con su compra")
-
-
-
+print("El monto a pagar es de", suma_total(lista))
 
 
 
