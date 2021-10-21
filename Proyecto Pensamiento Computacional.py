@@ -113,6 +113,14 @@ def suma_total(lista):
 
 print("El monto a pagar es de", suma_total(lista))
 
+        
+       
+
+
+
+
+
+
 
 
 
